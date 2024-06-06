@@ -1,0 +1,37 @@
+@use "variables" as *;
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-base {
+  border: none;
+  border-radius: $rounded-full;
+  padding: 1rem 1.875rem;
+  font-size: $fs-body;
+  font-weight: $fw-700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: $clr-white;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $clr-primary-400;
+
+  &:hover {
+    background-color: $clr-primary-hover;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $clr-secondary-400;
+
+  &:hover {
+    background-color: $clr-secondary-hover;
+  }
+}

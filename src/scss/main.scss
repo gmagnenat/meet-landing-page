@@ -1,0 +1,68 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "resets" as *;
+
+// General Styles
+body {
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: $clr-neutral-400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $fw-700;
+  color: $clr-secondary-800;
+}
+
+#main {
+}
+
+// Header Styles
+.header {
+  height: 15rem;
+  @include flex-center;
+}
+
+// Hero Styles
+.hero {
+  @include flex-center;
+
+  &__title {
+    font-size: $fs-800;
+    font-weight: $fw-900;
+    max-width: 10ch;
+    text-align: center;
+    line-height: 1;
+  }
+
+  &__description {
+    margin-top: $size-32;
+    font-size: $fs-500;
+    max-width: 45ch;
+    letter-spacing: 0.014em;
+    text-align: center;
+  }
+
+  &__links {
+    margin-top: $size-32;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+// Buttons
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
