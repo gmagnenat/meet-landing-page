@@ -10,7 +10,7 @@
   border: none;
   border-radius: $rounded-full;
   padding: 1rem 1.875rem;
-  font-size: $fs-body;
+  font-size: $fs-400;
   font-weight: $fw-700;
   text-decoration: none;
   cursor: pointer;
@@ -33,5 +33,41 @@
 
   &:hover {
     background-color: $clr-secondary-hover;
+  }
+
+  span {
+    color: $clr-secondary-200;
+  }
+}
+
+@mixin section-number {
+  .section__number {
+    font-size: 1rem;
+    border: 1px solid rgb($clr-neutral-400, 0.25);
+    width: fit-content;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    border-radius: $rounded-full;
+    position: relative;
+    top: -1.5rem;
+    background-color: $clr-white;
+    font-weight: $fw-900;
+    color: $clr-neutral-400;
+    margin-bottom: 4rem;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 5rem;
+      background-color: rgb($clr-neutral-400, 0.25);
+      border-radius: $rounded-full;
+      position: absolute;
+      top: -5rem;
+    }
   }
 }

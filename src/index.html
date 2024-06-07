@@ -44,17 +44,48 @@
     </header>
     <main id="main">
       <section class="hero">
-        <h1 class="hero__title">Group Chat for Everyone</h1>
-        <p class="hero__description">
-          Meet makes it easy to connect with others face-to-face virtually and
-          collaborate across any device.
-        </p>
+        <div class="hero__wrapper">
+          <picture class="hero__illustration">
+            <source
+              srcset="./assets/desktop/image-hero-left.png"
+              media="(min-width: 62em)"
+            />
+            <img
+              class="hero__illustration__image"
+              src="./assets/tablet/image-hero.png"
+              alt=""
+            />
+          </picture>
 
-        <div class="hero__links">
-          <a class="hero__link btn btn-primary" href=""
-            >Download <span class="version-number">v1.3</span></a
-          >
-          <a class="hero__link btn btn-secondary" href="">What is it?</a>
+          <div class="hero__content">
+            <h1 class="hero__title">Group Chat for Everyone</h1>
+            <p class="hero__description">
+              Meet makes it easy to connect with others face-to-face virtually
+              and collaborate across any device.
+            </p>
+            <div class="hero__links">
+              <a
+                class="hero__link btn btn-primary"
+                href="#"
+                title="Download v1.3"
+                >Download <span class="version-number">v1.3</span></a
+              >
+              <a
+                class="hero__link btn btn-secondary"
+                href="#"
+                title="Get more info on the app"
+                >What is it?</a
+              >
+            </div>
+          </div>
+
+          <picture class="hero__illustration">
+            <img
+              class="hero__illustration__image"
+              src="./assets/desktop/image-hero-right.png"
+              alt=""
+            />
+          </picture>
         </div>
       </section>
 
@@ -90,26 +121,29 @@
             />
           </li>
         </ul>
-        <p>Built for modern use</p>
+        <div class="content__container">
+          <p class="overline">Built for modern use</p>
 
-        <h2>Smarter meetings, all in one place</h2>
+          <h2 class="content__heading">Smarter meetings, all in one place</h2>
 
-        <p>
-          Send messages, share files, show your screen, and record your meetings
-          — all in one workspace. Control who can join with invite-only team
-          access, data encryption, and data export.
-        </p>
+          <p class="content__description">
+            Send messages, share files, show your screen, and record your
+            meetings — all in one workspace. Control who can join with
+            invite-only team access, data encryption, and data export.
+          </p>
+        </div>
       </section>
 
       <section class="cta section">
         <div class="section__number">02</div>
-        <h2>Experience more together</h2>
-        <p>
-          Stay connected with reliable HD meetings and unlimited one-on-one and
-          group video sessions.
-        </p>
-
-        <a href="">Download v1.3</a>
+        <div class="cta__container">
+          <h2 class="cta__heading">Experience more together</h2>
+          <p class="cta__description">
+            Stay connected with reliable HD meetings and unlimited one-on-one
+            and group video sessions.
+          </p>
+          <a class="btn btn-secondary" href="">Download <span>v1.3</span></a>
+        </div>
       </section>
     </main>
   </body>

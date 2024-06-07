@@ -1,8 +1,11 @@
+@use "sass:color";
 @use "variables" as *;
 @use "mixins" as *;
 @use "resets" as *;
 
-// General Styles
+/******************************************
+ * =General Styles
+ ******************************************/
 body {
   font-family: "Red Hat Display", sans-serif;
   line-height: 1.5;
@@ -21,44 +24,246 @@ h6 {
 }
 
 #main {
+  max-width: 100rem;
+  margin: 0 auto;
+  // padding: 0 1.5rem;
 }
 
-// Header Styles
+.container {
+  max-width: 90rem;
+}
+
+.overline {
+  color: $clr-primary-400;
+  font-weight: $fw-800;
+  line-height: 1.625rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/******************************************
+ * =Header Styles
+ ******************************************/
 .header {
-  height: 15rem;
   @include flex-center;
+  padding-top: 3rem;
 }
 
-// Hero Styles
+/******************************************
+ * =Hero Section Styles
+ ******************************************/
 .hero {
-  @include flex-center;
+  &__wrapper {
+    display: grid;
+    place-items: center;
+    // max-width: 94rem;
+    margin-top: 3.4rem;
+    overflow: hidden;
+
+    @media screen and (min-width: 62em) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+
+  &__illustration__image {
+    max-width: calc(100% + 4rem);
+    margin-left: -2rem;
+
+    @media screen and (min-width: 62em) {
+      max-width: 80%;
+      margin-left: 0;
+    }
+  }
+
+  &__illustration:nth-of-type(1) {
+    @media screen and (min-width: 62em) {
+      max-width: calc(100% + 12rem);
+      margin-left: -6rem;
+    }
+  }
+
+  &__illustration:nth-of-type(2) {
+    display: none;
+
+    @media screen and (min-width: 62em) {
+      display: block;
+      transform: translate(0, 3.5rem);
+      display: flex;
+      justify-content: end;
+      max-width: calc(100% + 12rem);
+      margin-right: -6rem;
+    }
+  }
 
   &__title {
-    font-size: $fs-800;
+    font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 0.2rem) * 2.7273)), 4rem);
     font-weight: $fw-900;
+    color: $clr-secondary-800;
+    line-height: 1.2;
     max-width: 10ch;
+  }
+
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    gap: 1.5rem;
     text-align: center;
-    line-height: 1;
+    margin-top: 3rem;
+    padding-inline: 1.5rem;
+    min-width: 29rem;
+    font-size: clamp(1rem, calc(1rem + ((1vw - 0.2rem) * 0.2273)), 1.125rem);
+
+    @media screen and (min-width: 62em) {
+      padding-inline: 0;
+    }
   }
 
   &__description {
-    margin-top: $size-32;
-    font-size: $fs-500;
-    max-width: 45ch;
-    letter-spacing: 0.014em;
-    text-align: center;
+    max-width: 30ch;
+    margin-inline: auto;
+    color: $clr-neutral-400;
+
+    @media screen and (min-width: 48em) {
+      max-width: 40ch;
+    }
   }
 
   &__links {
-    margin-top: $size-32;
-    display: flex;
-    flex-direction: row;
+    @include flex-center;
     gap: 1rem;
+
+    @media screen and (min-width: 48em) {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    font-size: $fs-400;
+
+    span {
+      color: $clr-primary-200;
+    }
   }
 }
 
-// Buttons
+/******************************************
+ * =Content Section Styles
+ ******************************************/
+.content {
+  @include section-number;
+  text-align: center;
+  padding-block: 10rem;
+  padding-inline: 1.5rem;
 
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+    max-width: 70rem;
+    margin-inline: auto;
+
+    @media screen and (min-width: 48em) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  &__container {
+    margin-top: 4rem;
+
+    @media screen and (min-width: 48em) {
+      max-width: 70%;
+      margin-inline: auto;
+    }
+  }
+
+  &__heading {
+    font-size: $fs-650;
+    line-height: 2.25rem;
+    color: $clr-secondary-800;
+    margin-top: 1.5rem;
+  }
+
+  &__description {
+    font-size: $fs-400;
+    max-width: 60ch;
+    margin-inline: auto;
+    line-height: 1.625rem;
+    color: $clr-neutral-400;
+    margin-top: 2rem;
+  }
+}
+
+/******************************************
+ * =CTA Section Styles
+ ******************************************/
+.cta {
+  @include section-number;
+  text-align: center;
+  padding-bottom: 5rem;
+
+  position: relative;
+  z-index: 1;
+  color: $clr-white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb($clr-primary-400, 0.8);
+    z-index: -1;
+  }
+
+  &__container {
+    @include flex-center;
+    gap: 1.5rem;
+
+    @media screen and (min-width: 61em) {
+      flex-direction: row;
+      align-items: center;
+      max-width: 70rem;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+    }
+  }
+
+  &__heading {
+    font-size: 2rem;
+    color: $clr-white;
+    max-width: 15ch;
+
+    @media screen and (min-width: 61em) {
+      max-width: 15ch;
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-size: $fs-400;
+    max-width: 25ch;
+    margin-inline: auto;
+    line-height: 1.625rem;
+
+    @media screen and (min-width: 61em) {
+      text-align: left;
+      max-width: 30ch;
+    }
+  }
+}
+
+/******************************************
+ * =Buttons Styles
+ ******************************************/
 .btn-primary {
   @include button-primary;
 }

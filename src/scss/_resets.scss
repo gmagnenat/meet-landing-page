@@ -30,7 +30,7 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
+  // max-width: 100%;
 }
 /*
   6. Remove built-in form typography styles
@@ -59,4 +59,5 @@ h6 {
 ul,
 ol {
   list-style: none;
+  padding: 0;
 }
