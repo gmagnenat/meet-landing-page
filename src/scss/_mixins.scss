@@ -20,6 +20,11 @@
 
 @mixin button-primary {
   @include button-base;
+
+  @media screen and (min-width: 48em) {
+    padding: 1.1rem 2.6rem;
+  }
+
   background-color: $clr-primary-400;
 
   &:hover {
@@ -29,6 +34,9 @@
 
 @mixin button-secondary {
   @include button-base;
+
+  padding: 1.1rem 1.75rem;
+
   background-color: $clr-secondary-400;
 
   &:hover {
@@ -54,11 +62,11 @@
     margin-inline: auto;
     border-radius: $rounded-full;
     position: relative;
-    top: -1.5rem;
+    transform: translateY(-50%);
     background-color: $clr-white;
     font-weight: $fw-900;
     color: $clr-neutral-400;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     &::before {
       content: "";
