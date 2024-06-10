@@ -11,6 +11,7 @@ body {
   line-height: 1.44;
   -webkit-font-smoothing: antialiased;
   color: $clr-neutral-400;
+  background-color: $clr-neutral-100;
 }
 
 h1,
@@ -45,7 +46,7 @@ h6 {
  ******************************************/
 .header {
   @include flex-center;
-  padding-top: 3rem;
+  padding-top: clamp(3rem, calc(3rem + ((1vw - 0.2rem) * 3.6364)), 5rem);
 }
 
 /******************************************
@@ -229,7 +230,7 @@ h6 {
 
   position: relative;
   z-index: 1;
-  color: $clr-white;
+  color: $clr-neutral-100;
 
   // overlay
   &::after {
