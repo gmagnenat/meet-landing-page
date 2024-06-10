@@ -9,7 +9,7 @@
 @mixin button-base {
   border: none;
   border-radius: $rounded-full;
-  padding: 1rem 1.875rem;
+  padding: $size-16 1.875rem;
   font-size: $fs-400;
   font-weight: $fw-700;
   text-decoration: none;
@@ -50,7 +50,7 @@
 
 @mixin section-number {
   .section__number {
-    font-size: 1rem;
+    font-size: $fs-400;
     border: 1px solid rgb($clr-neutral-400, 0.25);
     width: fit-content;
     width: 3.5rem;
