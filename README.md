@@ -13,6 +13,7 @@ This is a solution to the [Meet landing page challenge on Frontend Mentor](https
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
 - [Author](#author)
+- [Acknowledgement](#acknowledgement)
 
 ## Overview
 
@@ -29,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/meet-landing-page-scss-bem-grid-flexbox-zztleF0Y-Q](https://www.frontendmentor.io/solutions/meet-landing-page-scss-bem-grid-flexbox-zztleF0Y-Q)
 - Live Site URL: [https://incandescent-cupcake-1d9122.netlify.app/](https://incandescent-cupcake-1d9122.netlify.app/)
 
 ## My process
@@ -65,6 +66,19 @@ The parent needs to have an overflow hidden and the max-width need to be large e
 }
 ```
 
+I learned more about accessibility and images.
+
+A `title` isn't needed to label a link. the title attribute is problematic for accessibility.
+
+[More about the title attribute on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title)
+
+- Images should always have an alt attribute
+- Screen readers will read the file name or just say "image" if the image doesn't have the alt attribute
+- Screen readers will skip the image when the alt attribute is present but empty. This is ok for **decorative images**
+- Some user agents place inline svg into the focus order. It is advised to add `focusable="false"` to the svg.
+- `alt` should never repeat on a page.
+- if some images are similar and have the same purpose we can add an alt attribute to the first one and keep the other ones empty.
+
 ### Continued development
 
 I'll keep refactoring the html and scss. I have the feeling there are a lot of small
@@ -75,3 +89,7 @@ tweaking on individual elements such as font-sizes, line-height, letter-spacing 
 - Website - [Gwenaël Magnenat](https://gmagnenat.com)
 - Frontend Mentor - [@gmagnenat](https://www.frontendmentor.io/profile/gmagnenat)
 - LinkedIn - [@gmagnenat](https://www.linkedin.com/in/gmagnenat)
+
+## Acknowledgement
+
+Thank you to [Grace Snow](https://www.frontendmentor.io/profile/grace-snow) for her insightful feedbacks on accessibility.
